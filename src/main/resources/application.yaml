@@ -2,15 +2,8 @@ logging:
   level:
     web: DEBUG
 spring:
-  mail:
-    host: smtp.gmail.com
-    port: 587
-    username: test20412041
-    password: bkcmseqrdvbdxzvr
-    protocol: smtp
-    properties:
-      mail:
-        smtp:
-          auth: true
-          starttls:
-            enable: true
+  config:
+    import: classpath:local-profile.yml
+---
+spring.config.activate.on-profile: local-profile
+---
